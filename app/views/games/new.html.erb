@@ -1,0 +1,16 @@
+<h1>Games#new</h1>
+<p>Find me in app/views/games/new.html.erb</p>
+
+<ul>
+  <% @newArray.each do |letter| %>
+    <li><%= letter %></li>
+  <% end %>
+</ul>
+
+<form action="/score" method="POST">
+  <label for="word-input">What is the longest word you can find?</label>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="hidden" name="origin" value="<%= @newArray.join %>">
+  <input type="text" name="word" id="word-input">
+  <input type="submit" name="">
+</form>
